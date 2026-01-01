@@ -1,1 +1,50 @@
-node_modules
+# Dependency directories
+# Why: We don't want to copy your local node_modules because they may be 
+# built for your OS (Mac/Windows), whereas the container needs Linux versions.
+node_modules/
+jspm_packages/
+
+# Next.js build output
+# Why: We want the Dockerfile to run a fresh 'npm run build' inside the 
+# container to ensure the build is clean and matches the container environment.
+.next/
+out/
+build/
+
+# Debug and Log files
+# Why: These are temporary files created during errors and don't belong 
+# in a production image.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment and Secrets
+# Why: Never include secret keys or local environment configurations 
+# in a Docker image for security reasons.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Version Control
+# Why: The container doesn't need your entire Git history to run the app.
+.git
+.gitignore
+
+# Testing and Coverage
+# Why: Cypress and coverage reports are for development and testing, 
+# not for the final running website.
+cypress/
+cypress.config.ts
+coverage/
+.nyc_output
+
+# Editor and OS junk
+# Why: Files created by your code editor or operating system are unnecessary.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
