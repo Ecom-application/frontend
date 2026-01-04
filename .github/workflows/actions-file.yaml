@@ -23,11 +23,11 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Extract metadata (tags, labels) for Docker
-      - name: Extract metadata (tags, labels)
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ secrets.DOCKER_USERNAME }}/frontend  Replace with your image name
+      # - name: Extract metadata (tags, labels)
+       # id: meta
+        #uses: docker/metadata-action@v5
+        #with:
+         # images:   Replace with your image name
 
 
       # Build and push the image
